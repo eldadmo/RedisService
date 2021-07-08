@@ -31,8 +31,8 @@ Usage:
 Requirements
 * Redis server running :
   it's possible to change port and ip using <redisConfig.json>
-* See [a relative link](Requirements.txt) file
+* See (Requirements.txt) file
 
 How to install:
-* use provide [a relative link](Dockerfile) in order to use it with docker or just run main.py on your local machine.
+* use provide (Dockerfile) in order to use it with docker or just run main.py on your local machine.
 
