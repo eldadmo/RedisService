@@ -1,6 +1,6 @@
-import MessageController
-import ServerProvider
+import messageController
+import serverProvider
 
 if __name__ == '__main__':
-    ServerProvider.Init()
-    MessageController.api.run()
+    serverProvider.Init()
+    messageController.api.run()

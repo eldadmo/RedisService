@@ -1,4 +1,4 @@
-import ServerProvider
+import serverProvider
 from datetime import datetime
 from flask import Flask, json,request
 
@@ -10,19 +10,19 @@ def GetByTime():
         body = request.json
         _fromRange = datetime.strptime(body['fromRange'],'%Y-%m-%d %H:%M:%S')
         _toRange = datetime.strptime(body['toRange'],'%Y-%m-%d %H:%M:%S')
-        _messages = ServerProvider.GetRangeMessages(_fromRange, _toRange)
+        _messages = serverProvider.GetRangeMessages(_fromRange, _toRange)
     except Exception as ex:
         return json.dumps("Error" + ex)
     return json.dumps(_messages)
 
 @api.route('/Messages/Last', methods=['GET'])
 def GetLast():
-    _lastMessage = ServerProvider.GetLastMessage()
+    _lastMessage = serverProvider.GetLastMessage()
     return json.dumps(_lastMessage)
 
 @api.route('/Publish', methods=['POST'])
 def Publish():
     body = request.json
     content = body["Content"]
-    _timeStamp = ServerProvider.SetItem(content)
+    _timeStamp = serverProvider.SetItem(content)
     return json.dumps(_timeStamp)
