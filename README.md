@@ -13,7 +13,7 @@ Requirements
 How to install:
 * Install Redis-Server [https://hub.docker.com/_/redis]
   ```ruby 
-  docker run --name redis-server -d redis -p 6379:6379
+  docker run -d -p 6379:6379 --name redis-server redis
   ```
 * Install redisService
     * before you install redisService Update the following redisConfig.json file to desired redis endpoint 
