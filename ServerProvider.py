@@ -1,6 +1,6 @@
 import datetime
 from datetime import datetime
-from Configurations.RedisConfig import RedisConfig
+from RedisConfig import RedisConfig
 import redis
 import json
 import os
