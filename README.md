@@ -5,18 +5,27 @@ Usage:
     First, you need to define an ip and port for the service
     
 * Add message to  [Publis]:
-    using POST command to path : curl --location --request POST 'http://127.0.0.1:5000/Publish' \ --header 'Content-Type: application/json' \ --data-raw '{"Content": "PUT YOUR CONTENT HERE"}'
+    using POST command to path : 
+    ```ruby 
+    curl --location --request POST 'http://127.0.0.1:5000/Publish' 
+  \ --header 'Content-Type: application/json' \ --data-raw '{"Content": "PUT YOUR CONTENT HERE"}' 
+  ```
     
 * Get last message from:
-    using GET coammand to path : curl --location --request GET 'http://127.0.0.1:5000/Messages/Last'
+    using GET coammand to path :  
+  ```ruby 
+  curl --location --request GET 'http://127.0.0.1:5000/Messages/Last' 
+  ```
     
 * Get messages within provided range :
+  ```ruby
     curl --location --request GET 'http://127.0.0.1:5000/Messages/ByTimeRange' \
     --header 'Content-Type: application/json' \
     --data-raw '{
         "fromRange":"2021-07-08 13:00:02",
         "toRange":"2021-07-08 14:40:02"
     }'
+  ```
     
 
 Requirements
