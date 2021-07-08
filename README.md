@@ -1,9 +1,42 @@
 # RedisService
 A small redis service which provide the ability to save content via Rest API
 
-Usage:
-    First, you need to define an ip and port for the service
-    
+----
+
+Requirements
+* Redis server running :
+  it's possible to change port and ip using <redisConfig.json>
+* See (Requirements.txt) file
+
+-----------
+
+How to install:
+* Install Redis-Server [https://hub.docker.com/_/redis]
+  ```ruby 
+  docker run --name redis-server -d redis -p 6379:6379
+  ```
+* Install redisService
+    * before you install redisService Update the following redisConfig.json file to desired redis endpoint 
+  ```ruby 
+  {
+  "localhost": "<redis-server-ip>",
+  "port": 6379,
+  "db": 0 
+  }
+  ```
+  * Build docker image:
+  ```ruby
+  docker build -t redis-service .
+  ```
+  
+  * Run the service:
+  ```ruby
+  docker run -d -p 5000:5000 --name my-redis-service redis-service
+  ```
+
+* use provide (Dockerfile) in order to use it with docker or just run main.py on your local machine.
+-----------
+USAGE Examples
 * Add message to  [Publis]:
     using POST command to path : 
     ```ruby 
@@ -26,13 +59,3 @@ Usage:
         "toRange":"2021-07-08 14:40:02"
     }'
   ```
-    
-
-Requirements
-* Redis server running :
-  it's possible to change port and ip using <redisConfig.json>
-* See (Requirements.txt) file
-
-How to install:
-* use provide (Dockerfile) in order to use it with docker or just run main.py on your local machine.
-
