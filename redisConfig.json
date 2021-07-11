@@ -1,5 +1,5 @@
 {
-  "localhost": "localhost",
+  "localhost": "0.0.0.0",
   "port": 6379,
   "db": 0
 }
